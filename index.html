@@ -1,8 +1,7 @@
 <html>
   <head>
     <title>Sit/Stand Tool</title>
-    <script type="text/javascript" src="lib/require.js"></script>
-    <script type="text/javascript" src="lib/browser.js"></script>
+    <script type="text/javascript" defer src="lib/browser_bundle.js"></script>
   </head>
   <body>
     <p>
@@ -12,7 +11,7 @@
       <label><input type="checkbox" onclick="sitstand.enableNotifications()" id="notificationsEnabled" /> Enable Notifications</label>
     </div>
     <div>
-      <label>Stand for <input type="number" id="standFor"/> minutes</label>
+      <label>Stand for <input type="number" id="standFor" value="15"/> minutes</label>
       <span> at the <select id="when"><option>start</option><option>middle</option><option>end</option></select> of every hour</span>
     </div>
     <div>

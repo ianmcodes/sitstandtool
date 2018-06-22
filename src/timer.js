@@ -5,6 +5,7 @@ export class Timer {
   }
 
   start() {
+    if(!!this._interval) return;
     this._interval = setInterval(() => {
       let now = new Date();
       let minute = now.getMinutes();
@@ -16,5 +17,6 @@ export class Timer {
 
   stop() {
     clearInterval(this._interval);
+    this._interval = null;
   }
 }

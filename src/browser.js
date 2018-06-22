@@ -1,6 +1,6 @@
 import { Timer } from "./timer";
 
-let sitstand = {};
+window.sitstand = {};
 
 sitstand._tag = "sitstand_" + Math.random();
 
@@ -11,7 +11,7 @@ sitstand.start = function() {
   // if no timer
   if(!sitstand.timer) {
     // get values
-    let standFor = document.getElementById('standFor').value || 15;
+    let standFor = parseInt(document.getElementById('standFor').value) || 15;
     let when = document.getElementById('when').value || 'start';
     let minutes = {}, standAt;
     // calculate minutes
@@ -23,7 +23,7 @@ sitstand.start = function() {
         standAt = 30 - Math.floor(standFor / 2);
       break;
       case 'end':
-        standAt = 60 - standFor;
+        standAt = 59 - standFor;
       break;
     }
     minutes[standAt] = sitstand._standMsg;
@@ -33,17 +33,21 @@ sitstand.start = function() {
   }
   // start timer
   sitstand.timer.start();
+  sitstand.setState(sitstand._sitMsg);
 };
 
 sitstand.pause = function() {
   // stop timer, do not destroy
+  if(!sitstand.timer) return;
   sitstand.timer.stop();
 };
 
 sitstand.stop = function() {
   // stop and destroy timer
+  if(!sitstand.timer) return;
   sitstand.timer.stop();
   sitstand.timer = null;
+  sitstand.setState("");
 };
 
 sitstand.enableNotifications = function() {
@@ -72,6 +76,10 @@ sitstand.callback = function(response) {
       renotify: true
     });
   }
-  let stateEl = document.getElementById("state");
-  stateEl.innerHTML = response;
+  sitstand.setState(response);
 };
+
+sitstand.setState = function(state) {
+  let stateEl = document.getElementById("state");
+  stateEl.innerHTML = state;
+}
