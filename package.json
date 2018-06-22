@@ -1,0 +1,24 @@
+{
+  "name": "sitstandtool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmcodes/sitstandtool.git"
+  },
+  "author": "Ian McCall <ian@ianmccall.codes>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianmcodes/sitstandtool/issues"
+  },
+  "homepage": "https://github.com/ianmcodes/sitstandtool#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
