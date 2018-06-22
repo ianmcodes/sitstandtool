@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Sit/Stand Tool</title>
+    <script type="text/javascript" src="lib/browser.js"></script>
+  </head>
+  <body>
+    <p>
+      This is a tool to remind you to stand for some time while you are at work.
+    </p>
+    <div>
+      <label><input type="checkbox" onclick="sitstand.enableNotifications()" id="notificationsEnabled" /> Enable Notifications</label>
+    </div>
+    <div>
+      <label>Stand for <input type="number" id="standFor"/> minutes</label>
+      <span> at the <select id="when"><option>start</option><option>middle</option><option>end</option></select> of every hour</span>
+    </div>
+    <div>
+      <input type="button" onclick="sitstand.start()" value="Start" />
+      <input type="button" onclick="sitstand.pause()" value="Pause" />
+      <input type="button" onclick="sitstand.stop()" value="Stop" />
+    </div>
+    <div>
+      <span id="state"></span>
+    </div>
+  </body>
+</html>
