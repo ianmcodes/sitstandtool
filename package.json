@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d lib && browserify lib/browser.js -o lib/browser_bundle.js"
+    "build": "babel src -d lib && babel-external-helpers -t umd -l classCallCheck,createClass > lib/helpers.js && browserify lib/browser.js -o lib/browser_bundle.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ianmcodes/sitstandtool#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "browserify": "^16.2.2"
   }
