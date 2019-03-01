@@ -1,12 +1,12 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 2 versions"]
       }
     }]
   ],
   "plugins": [
-    "external-helpers"
+    "@babel/plugin-external-helpers"
   ]
 }
